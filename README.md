@@ -1,4 +1,4 @@
-﻿# Multi-Agentic RAG FYP
+﻿# Multi-Agentic Cybersecurity
 
 This project is a Google ADK multi-agent retrieval system that:
 
