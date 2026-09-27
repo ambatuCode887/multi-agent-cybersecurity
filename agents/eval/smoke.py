@@ -1,8 +1,4 @@
-"""
-Opt-in live smoke check for the configured LLM and Atlassian MCP.
-
-This command is read-only: it makes one harmless model request and performs the MCP ``tools/list`` preflights, but never calls a Confluence write tool. It is intended to be run in a CI/CD pipeline to verify that the configured LLM and MCP are working correctly.
-"""
+"""Smoke-check local chunking and Confluence publish-payload preparation."""
 
 from __future__ import annotations
 

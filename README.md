@@ -7,7 +7,7 @@ This project is a Google ADK multi-agent retrieval system that:
 - embeds chunks with Google Gemini embeddings
 - retrieves relevant context for grounded answers
 - prepares Confluence publish payloads
-- supports optional Confluence MCP bridge or direct REST publishing
+- publishes directly to Confluence through its REST API
 
 ## Prerequisites
 
@@ -15,7 +15,6 @@ This project is a Google ADK multi-agent retrieval system that:
 - Docker Desktop (for the local Qdrant container)
 - A Google API key for Gemini embeddings
 - Optional: Confluence credentials if you want direct publishing
-- Optional: Atlassian MCP server if you want the MCP bridge
 
 ## 1. Create your local environment
 
@@ -104,10 +103,7 @@ Then open the local URL shown in the terminal (typically `http://127.0.0.1:8000`
 
 ## 7. Optional: publish to Confluence
 
-The project supports two publish paths:
-
-- direct REST publishing using `CONFLUENCE_BASE_URL`, `CONFLUENCE_EMAIL`, and `CONFLUENCE_API_TOKEN`
-- optional MCP bridge using `CONFLUENCE_MCP_URL` or `CONFLUENCE_MCP_COMMAND`
+Publishing uses the Confluence REST API with `CONFLUENCE_BASE_URL`, `CONFLUENCE_EMAIL`, and `CONFLUENCE_API_TOKEN`.
 
 The direct publish helpers default to a `dry_run` preview, so you can validate the generated payload before writing to Confluence.
 
@@ -132,11 +128,6 @@ CONFLUENCE_EMAIL=you@example.com
 CONFLUENCE_API_TOKEN=your_confluence_api_token_here
 CONFLUENCE_SPACE_KEY=YOUR_SPACE_KEY
 CONFLUENCE_PARENT_ID=
-
-ATLASSIAN_MCP_URL=
-CONFLUENCE_MCP_URL=
-CONFLUENCE_MCP_COMMAND=
-CONFLUENCE_MCP_ARGS=
 ```
 
 A reusable skeleton is already provided in `.env.example`.
