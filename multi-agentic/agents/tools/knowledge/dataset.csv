@@ -1,0 +1,3 @@
+id,question,reference_answer,expected_keywords
+case-1,What is credential stuffing?,An attack using leaked usernames and passwords.,credential stuffing|leaked usernames|passwords
+case-2,How can credential stuffing be prevented?,Use MFA rate limiting and breached-password detection.,multi-factor authentication|rate limiting|breached-password detection
